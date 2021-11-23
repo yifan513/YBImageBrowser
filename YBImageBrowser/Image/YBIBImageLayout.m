@@ -72,8 +72,8 @@
     CGFloat scale = [UIScreen mainScreen].scale;
     if (scale <= 0) return 0;
     
-    CGFloat widthScale = imageSize.width / scale / containerSize.width,
-    heightScale = imageSize.height / scale / containerSize.height,
+    CGFloat widthScale = imageSize.width * scale / containerSize.width,
+    heightScale = imageSize.height * scale / containerSize.height,
     maxScale = 1;
     switch ([self fillTypeByOrientation:orientation]) {
         case YBIBImageFillTypeFullWidth:
