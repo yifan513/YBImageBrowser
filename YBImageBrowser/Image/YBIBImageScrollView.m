@@ -39,6 +39,7 @@
 #pragma mark - public
 
 - (void)setImage:(__kindof UIImage *)image type:(YBIBScrollImageType)type {
+    self.imageView.frame = self.bounds;
     self.imageView.image = image;
     self.imageType = type;
 }
