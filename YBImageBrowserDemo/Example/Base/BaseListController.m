@@ -11,6 +11,7 @@
 #import "YBIBUtilities.h"
 #import <SDWebImage/SDImageCache.h>
 #import "YBIBToastView.h"
+#import "YBImageBrowser.h"
 
 @interface BaseListController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -26,6 +27,11 @@
     self.view.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:self.collectionView];
     [self.view addSubview:self.clearButton];
+    
+    if (_startFirstPage) {
+        [self selectedIndex:(NSInteger)0];
+        
+    }
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
@@ -45,10 +51,31 @@
     return nil;
 }
 
-- (void)selectedIndex:(NSInteger)index {}
+- (void)selectedIndex:(NSInteger)index {
+
+    NSMutableArray *datas = [NSMutableArray array];
+    [self.dataArray enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        // 网络图片
+        YBIBImageData *data = [YBIBImageData new];
+        data.imageURL = [NSURL URLWithString:obj];
+        data.projectiveView = [self viewAtIndex:idx];
+        [datas addObject:data];
+    }];
+    
+    YBImageBrowser *browser = [YBImageBrowser new];
+    browser.dataSourceArray = datas;
+    browser.currentPage = index;
+    
+    browser.delegate = self;
+    browser.toolViewHandlers = @[];
+    [browser show];
+    
+    
+    
+}
 
 + (NSString *)yb_title {
-    return nil;
+    return @"12121212";
 }
 
 #pragma mark - <UICollectionViewDataSource, UICollectionViewDelegate>

@@ -13,7 +13,7 @@
 #import "TestDController.h"
 #import "TestEController.h"
 #import "TestFController.h"
-
+#import "YBImageBrowser.h"
 @interface MainController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @end
@@ -29,6 +29,16 @@
     self.navigationItem.title = @"YBImageBrowser";
     _controllers = @[TestAController.self, TestBController.self, TestCController.self, TestDController.self, TestFController.self, TestEController.self];
     [self.view addSubview:self.tableView];
+    
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [button addTarget:self
+//               action:@selector(aMethod:)
+//     forControlEvents:UIControlEventTouchUpInside];
+//    [button setTitle:@"Show View" forState:UIControlStateNormal];
+//    button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
+//    [self.view addSubview:button];
+
+    
 }
 
 - (void)viewWillLayoutSubviews {
@@ -39,7 +49,7 @@
 #pragma mark - <UITableViewDataSource, UITableViewDelegate>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _controllers.count;
+    return _controllers.count + 2;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -54,14 +64,50 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.font = [UIFont boldSystemFontOfSize:17];
     }
-    cell.textLabel.text = [_controllers[indexPath.row] yb_title];
+    if (indexPath.row < _controllers.count)
+        cell.textLabel.text = [_controllers[indexPath.row] yb_title];
+    else
+        cell.textLabel.text = [@"TEST direct(No new class files) " stringByAppendingFormat:@"%d", indexPath.row - _controllers.count];
     return cell;
 }
 
+
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    BaseListController *vc = [_controllers[indexPath.row] new];
-    vc.title = [vc.class yb_title];
-    [self.navigationController pushViewController:vc animated:YES];
+    if (indexPath.row < _controllers.count) {
+        BaseListController *vc = [_controllers[indexPath.row] new];
+        vc.title = [vc.class yb_title];
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    } else if (indexPath.row == _controllers.count){
+        
+        BaseListController *vc = [BaseListController new];
+        vc.title = @"testsss1";
+        
+        
+        
+        NSMutableArray *array = [NSMutableArray array];
+        
+        
+        [array addObjectsFromArray:@[@"https://u.mycurrentmessenger.com/uploaded_files/2021/11/11/ttl7daynTF_9e9a94cc1c2098d7abb16f3d18c73386aab3e97ff08dfac8b397d938e69937a2.png"]];
+        [vc setDataArray:array];
+        vc.startFirstPage = true;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else {
+        BaseListController *vc = [BaseListController new];
+        vc.startFirstPage = false;
+        vc.title = @"testssss";
+        
+        NSMutableArray *array = [NSMutableArray array];
+        [array addObjectsFromArray:@[@"https://u.mycurrentmessenger.com/uploaded_files/2021/11/11/ttl7daynTF_9e9a94cc1c2098d7abb16f3d18c73386aab3e97ff08dfac8b397d938e69937a2.png",
+         @"https://imgs.wantubizhi.com/upload/i_2/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3633407012x2153011765_26_0.jpg"]];
+        [vc setDataArray:array];
+        [self.navigationController pushViewController:vc animated:YES];
+        
+        
+    }
 }
 
 #pragma mark - getter

@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BaseListController : UIViewController
 
 @property (nonatomic, copy) NSArray *dataArray;
+@property (nonatomic) bool startFirstPage;
 
 - (id)viewAtIndex:(NSInteger)index;
 

@@ -22,9 +22,11 @@
     self = [super init];
     if (self) {
         NSMutableArray *array = [NSMutableArray array];
-        [array addObjectsFromArray:[BaseFileManager imageURLs]];
-        [array addObjectsFromArray:[BaseFileManager imageNames]];
-        [array addObjectsFromArray:[BaseFileManager videos]];
+//        [array addObjectsFromArray:[BaseFileManager imageURLs]];
+//        [array addObjectsFromArray:[BaseFileManager imageNames]];
+//        [array addObjectsFromArray:[BaseFileManager videos]];
+        
+        [array addObjectsFromArray:@[@"https://u.mycurrentmessenger.com/uploaded_files/2021/11/11/ttl7daynTF_9e9a94cc1c2098d7abb16f3d18c73386aab3e97ff08dfac8b397d938e69937a2.png"]];
         self.dataArray = array;
     }
     return self;
