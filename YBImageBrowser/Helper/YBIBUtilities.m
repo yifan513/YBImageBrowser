@@ -90,6 +90,16 @@ CGFloat YBIBSafeAreaBottomHeight(void) {
     return bottom;
 }
 
+BOOL isVideo(NSString *ulrOrName) {
+    if ([ulrOrName localizedCaseInsensitiveContainsString:@".mov"] ||
+        [ulrOrName localizedCaseInsensitiveContainsString:@".m4v"] ||
+        [ulrOrName localizedCaseInsensitiveContainsString:@".mp4"]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 UIImage *YBIBSnapshotView(UIView *view) {
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, [UIScreen mainScreen].scale);
     [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:NO];

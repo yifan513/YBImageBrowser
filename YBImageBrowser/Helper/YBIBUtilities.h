@@ -44,6 +44,7 @@ UIImage *YBIBSnapshotView(UIView *);
 /// This is orientation of 'YBImageBrowser' not 'UIDevice'.
 UIEdgeInsets YBIBPaddingByBrowserOrientation(UIDeviceOrientation);
 
+BOOL isVideo(NSString *);
 
 @interface YBIBUtilities : NSObject
 
