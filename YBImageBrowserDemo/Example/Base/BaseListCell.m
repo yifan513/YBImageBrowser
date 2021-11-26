@@ -11,6 +11,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "YBIBIconManager.h"
 #import <libkern/OSAtomic.h>
+#import "YBIBUtilities.h"
 
 @interface BaseListCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *coverImgView;
@@ -33,8 +34,6 @@
     self.coverImgView.image = nil;
     self.typeLabel.text = nil;
     self.textLabel.text = nil;
-    
-    // 测试用途，请忽略不严谨逻辑
     
     CGFloat padding = 5, imageViewLength = ([UIScreen mainScreen].bounds.size.width - padding * 2) / 3 - 10, scale = [UIScreen mainScreen].scale;
     CGSize imageViewSize = CGSizeMake(imageViewLength * scale, imageViewLength * scale);
@@ -67,8 +66,7 @@
         
         NSString *imageStr = (NSString *)data;
         __block BOOL isBigImage = NO, isLongImage = NO;
-        
-        if ([imageStr hasSuffix:@".mp4"]) {
+        if (isVideo(imageStr)){
             
             AVURLAsset *avAsset = nil;
             if ([imageStr hasPrefix:@"http"]) {
@@ -132,7 +130,7 @@
             self.textLabel.text = imageStr;
         }
         
-        if ([imageStr hasSuffix:@".mp4"]) {
+        if (isVideo(imageStr)){
             self.coverImgView.hidden = NO;
             self.typeLabel.hidden = YES;
             self.coverImgView.image = [YBIBIconManager sharedManager].videoBigPlayImage();
@@ -143,11 +141,11 @@
         } else if (isBigImage) {
             self.coverImgView.hidden = YES;
             self.typeLabel.hidden = NO;
-            self.typeLabel.text = @" 高清图 ";
+            self.typeLabel.text = @" HD ";
         } else if (isLongImage) {
             self.coverImgView.hidden = YES;
             self.typeLabel.hidden = NO;
-            self.typeLabel.text = @" 长图 ";
+            self.typeLabel.text = @" Long ";
         } else {
             self.coverImgView.hidden = YES;
             self.typeLabel.hidden = YES;
