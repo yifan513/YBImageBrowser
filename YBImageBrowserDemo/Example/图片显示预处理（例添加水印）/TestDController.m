@@ -9,6 +9,7 @@
 #import "TestDController.h"
 #import "YBImageBrowser.h"
 #import "YBIBUtilities.h"
+#import "BaseFileManager.h"
 
 @interface TestDController ()
 

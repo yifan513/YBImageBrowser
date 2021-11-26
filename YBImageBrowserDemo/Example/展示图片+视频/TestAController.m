@@ -9,6 +9,7 @@
 #import "TestAController.h"
 #import "YBImageBrowser.h"
 #import "YBIBVideoData.h"
+#import "BaseFileManager.h"
 
 @interface TestAController ()
 

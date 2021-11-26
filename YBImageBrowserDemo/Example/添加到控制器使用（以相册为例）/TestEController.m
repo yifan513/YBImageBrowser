@@ -9,6 +9,7 @@
 #import "TestEController.h"
 #import "TestImageBrowser.h"
 #import "YBIBPhotoAlbumManager.h"
+#import "BaseFileManager.h"
 
 @interface TestEController ()
 

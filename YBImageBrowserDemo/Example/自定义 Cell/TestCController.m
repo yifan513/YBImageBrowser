@@ -9,6 +9,7 @@
 #import "TestCController.h"
 #import "YBImageBrowser.h"
 #import "TestCustomData.h"
+#import "BaseFileManager.h"
 
 static NSString *kAdvertKey = @"广告位";
 

@@ -10,6 +10,7 @@
 #import "YBIBPhotoAlbumManager.h"
 #import "YBImageBrowser.h"
 #import "YBIBVideoData.h"
+#import "BaseFileManager.h"
 
 @interface TestFController () <YBImageBrowserDataSource>
 
