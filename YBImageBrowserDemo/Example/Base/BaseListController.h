@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSArray *dataArray;
 @property (nonatomic) bool startFirstPage;
+@property (nonatomic, strong) NSMutableArray *datas;
+
 
 - (id)viewAtIndex:(NSInteger)index;
 

@@ -12,6 +12,7 @@
 #import <SDWebImage/SDImageCache.h>
 #import "YBIBToastView.h"
 #import "YBImageBrowser.h"
+#import "YBIBVideoData.h"
 
 @interface BaseListController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -41,6 +42,7 @@
 #pragma mark - public
 
 - (id)viewAtIndex:(NSInteger)index {
+    return nil;
     BaseListCell *cell = (BaseListCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
     return cell ? cell.contentImgView : nil;
 }
@@ -53,29 +55,22 @@
 
 - (void)selectedIndex:(NSInteger)index {
 
-    NSMutableArray *datas = [NSMutableArray array];
-    [self.dataArray enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        // 网络图片
-        YBIBImageData *data = [YBIBImageData new];
-        data.imageURL = [NSURL URLWithString:obj];
-        data.projectiveView = [self viewAtIndex:idx];
-        [datas addObject:data];
-    }];
-    
     YBImageBrowser *browser = [YBImageBrowser new];
-    browser.dataSourceArray = datas;
+    browser.dataSourceArray = _datas;
     browser.currentPage = index;
-    
     browser.delegate = self;
     browser.toolViewHandlers = @[];
     [browser show];
-    
-    
-    
 }
 
+
+- (NSInteger)yb_numberOfCellsInImageBrowser:(YBImageBrowser *)imageBrowser {
+    return self.dataArray.count;
+}
+
+
 + (NSString *)yb_title {
-    return @"12121212";
+    return @"";
 }
 
 #pragma mark - <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -107,7 +102,41 @@
 
 - (void)setDataArray:(NSArray *)dataArray {
     _dataArray = dataArray;
+    _datas = [NSMutableArray array];
+    [self.dataArray enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+
+        if (isVideo(obj)) {
+            YBIBVideoData *data = [YBIBVideoData new];
+            if ([obj containsString:@"http"]) {
+                data.videoURL = [NSURL URLWithString:obj];
+            } else {
+                if ([obj hasPrefix:@"/"]) {
+                    data.videoURL = [NSURL fileURLWithPath:obj];
+                } else {
+                    NSString *path = [[NSBundle mainBundle] pathForResource:obj.stringByDeletingPathExtension ofType:obj.pathExtension];
+                    data.videoURL = [NSURL fileURLWithPath:path];
+                }
+            }
+            data.projectiveView = [self viewAtIndex:idx];
+            [_datas addObject:data];
+        }
+        else {
+            YBIBImageData *data = [YBIBImageData new];
+            if ([obj containsString:@"http"]) {
+                data.imageURL = [NSURL URLWithString:obj];
+            }
+            else if ([obj hasPrefix:@"/"]) {
+                data.imagePath = obj;
+            } else {
+                data.imageName = obj;
+            }
+            data.projectiveView = [self viewAtIndex:idx];
+            [_datas addObject:data];
+        }
+    }];
+    
     [self.collectionView reloadData];
+    
 }
 
 - (UICollectionView *)collectionView {
