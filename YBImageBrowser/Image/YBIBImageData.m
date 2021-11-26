@@ -152,7 +152,7 @@ static dispatch_queue_t YBIBImageProcessingQueue(void) {
     NSString *name = self.imageName.copy;
     NSString *path = self.imagePath.copy;
     NSData *data = self.imageData ? self.imageData().copy : nil;
-    if (name.length == 0 && path.length == 0 && data.length == 0) return;
+    if (!(name && name.length) && !(path && path.length) && !(data && data.length)) return;
     
     YBImageDecodeDecision decision = [self defaultDecodeDecision];
     
