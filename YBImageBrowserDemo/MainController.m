@@ -14,6 +14,8 @@
 #import "TestEController.h"
 #import "TestFController.h"
 #import "YBImageBrowser.h"
+#import "BaseListCell.h"
+
 @interface MainController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @end
@@ -81,19 +83,19 @@
         [self.navigationController pushViewController:vc animated:YES];
         
     } else if (indexPath.row == _controllers.count){
+        NSString *obj = @"https://u.mycurrentmessenger.com/uploaded_files/2021/11/11/ttl7daynTF_9e9a94cc1c2098d7abb16f3d18c73386aab3e97ff08dfac8b397d938e69937a2.png";
+        NSMutableArray *datas = [NSMutableArray array];
+        YBIBImageData *data = [YBIBImageData new];
+        data.imageURL = [NSURL URLWithString:obj];
+        data.projectiveView =  nil;
+        [datas addObject:data];
         
-        BaseListController *vc = [BaseListController new];
-        vc.title = @"testsss1";
-        
-        
-        
-        NSMutableArray *array = [NSMutableArray array];
-        
-        
-        [array addObjectsFromArray:@[@"https://u.mycurrentmessenger.com/uploaded_files/2021/11/11/ttl7daynTF_9e9a94cc1c2098d7abb16f3d18c73386aab3e97ff08dfac8b397d938e69937a2.png"]];
-        [vc setDataArray:array];
-        vc.startFirstPage = true;
-        [self.navigationController pushViewController:vc animated:YES];
+        YBImageBrowser *browser = [YBImageBrowser new];
+        browser.dataSourceArray = datas;
+        browser.currentPage = 0;
+        browser.delegate = self;
+        browser.toolViewHandlers = @[];
+        [browser show];
     }
     else {
         BaseListController *vc = [BaseListController new];
@@ -101,12 +103,17 @@
         vc.title = @"testssss";
         
         NSMutableArray *array = [NSMutableArray array];
-        [array addObjectsFromArray:@[@"https://u.mycurrentmessenger.com/uploaded_files/2021/11/11/ttl7daynTF_9e9a94cc1c2098d7abb16f3d18c73386aab3e97ff08dfac8b397d938e69937a2.png",
-         @"https://imgs.wantubizhi.com/upload/i_2/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3633407012x2153011765_26_0.jpg"]];
+        [array addObjectsFromArray:@
+         [@"https://u.mycurrentmessenger.com/uploaded_files/2021/11/11/ttl7daynTF_9e9a94cc1c2098d7abb16f3d18c73386aab3e97ff08dfac8b397d938e69937a2.png",
+          @"localVideo0.mp4",
+          @"localImage1.gif",
+          @"localImage0.jpg",
+          @"localBigImage0.jpeg",
+          @"localLongImage0.jpeg",
+          @"https://aweme.snssdk.com/aweme/v1/playwm/?video_id=v0200ff00000bdkpfpdd2r6fb5kf6m50&line=0.mp4",
+          @"https://imgs.wantubizhi.com/upload/i_2/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3633407012x2153011765_26_0.jpg"]];
         [vc setDataArray:array];
         [self.navigationController pushViewController:vc animated:YES];
-        
-        
     }
 }
 
