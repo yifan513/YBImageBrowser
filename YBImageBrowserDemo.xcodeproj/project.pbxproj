@@ -15,7 +15,6 @@
 		231F048922A8A3DF00C335FE /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 231F048722A8A3DF00C335FE /* MainNavigationController.m */; };
 		231F04AC22A8A95B00C335FE /* localBigImage0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 231F049522A8A95A00C335FE /* localBigImage0.jpeg */; };
 		231F04B922A8A95B00C335FE /* localLongImage0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 231F04A222A8A95A00C335FE /* localLongImage0.jpeg */; };
-		2325B19823AA345F00FF76E3 /* BaseListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2325B19723AA345F00FF76E3 /* BaseListController.m */; };
 		23556E4322D77F43004178DA /* YBIBContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23556E4222D77F43004178DA /* YBIBContainerView.m */; };
 		23A484A1233CC0500017FA5D /* NSObject+YBImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A484A0233CC0500017FA5D /* NSObject+YBImageBrowser.m */; };
 		23ABA2A722D0BAB700535F6A /* YBIBAuxiliaryViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 23ABA26D22D0BAB600535F6A /* YBIBAuxiliaryViewHandler.m */; };
@@ -50,8 +49,6 @@
 		23C282EF22D5F43C0084E9E6 /* YBIBVideoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C282EE22D5F43C0084E9E6 /* YBIBVideoData.m */; };
 		23C282F222D5F4540084E9E6 /* YBIBVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C282F122D5F4540084E9E6 /* YBIBVideoCell.m */; };
 		23CC34D722DC252C0037018B /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CC34D622DC252C0037018B /* MainController.m */; };
-		23CC34E122DC2D6D0037018B /* BaseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CC34DF22DC2D6D0037018B /* BaseListCell.m */; };
-		23CC34E222DC2D6D0037018B /* BaseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CC34E022DC2D6D0037018B /* BaseListCell.xib */; };
 		23CC34EA22DC58F10037018B /* TestAController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CC34E922DC58F10037018B /* TestAController.m */; };
 		23CC34ED22DC59190037018B /* TestBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CC34EC22DC59190037018B /* TestBController.m */; };
 		23CC34F022DC59250037018B /* TestCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CC34EF22DC59250037018B /* TestCController.m */; };
@@ -70,6 +67,9 @@
 		23F26AD222D7208700C27C21 /* YBIBVideoActionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F26AD122D7208700C27C21 /* YBIBVideoActionBar.m */; };
 		23F5A00D23161D51003F0FAE /* YBIBDefaultWebImageMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F5A00C23161D51003F0FAE /* YBIBDefaultWebImageMediator.m */; };
 		23FF103622F6B6FC0091331F /* TestFController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FF103522F6B6FC0091331F /* TestFController.m */; };
+		63663A5627519A070036DF5F /* BaseListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63663A5127519A060036DF5F /* BaseListController.m */; };
+		63663A5727519A070036DF5F /* BaseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63663A5227519A070036DF5F /* BaseListCell.xib */; };
+		63663A5827519A070036DF5F /* BaseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63663A5327519A070036DF5F /* BaseListCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,8 +101,6 @@
 		231F049522A8A95A00C335FE /* localBigImage0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = localBigImage0.jpeg; sourceTree = "<group>"; };
 		231F04A222A8A95A00C335FE /* localLongImage0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = localLongImage0.jpeg; sourceTree = "<group>"; };
 		231FD3D6231530750016D426 /* YBIBWebImageMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBIBWebImageMediator.h; sourceTree = "<group>"; };
-		2325B19623AA345F00FF76E3 /* BaseListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseListController.h; sourceTree = "<group>"; };
-		2325B19723AA345F00FF76E3 /* BaseListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseListController.m; sourceTree = "<group>"; };
 		232D0EF722D2DFED00666331 /* YBIBOrientationReceiveProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBIBOrientationReceiveProtocol.h; sourceTree = "<group>"; };
 		232D0EF822D2F3AC00666331 /* YBIBOperateBrowserProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBIBOperateBrowserProtocol.h; sourceTree = "<group>"; };
 		233BD69522C6497100F4CEF3 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -181,9 +179,6 @@
 		23C282F122D5F4540084E9E6 /* YBIBVideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBIBVideoCell.m; sourceTree = "<group>"; };
 		23CC34D522DC252C0037018B /* MainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		23CC34D622DC252C0037018B /* MainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
-		23CC34DE22DC2D6D0037018B /* BaseListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseListCell.h; sourceTree = "<group>"; };
-		23CC34DF22DC2D6D0037018B /* BaseListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseListCell.m; sourceTree = "<group>"; };
-		23CC34E022DC2D6D0037018B /* BaseListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseListCell.xib; sourceTree = "<group>"; };
 		23CC34E822DC58F10037018B /* TestAController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAController.h; sourceTree = "<group>"; };
 		23CC34E922DC58F10037018B /* TestAController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAController.m; sourceTree = "<group>"; };
 		23CC34EB22DC59190037018B /* TestBController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBController.h; sourceTree = "<group>"; };
@@ -219,6 +214,11 @@
 		23FC590B23B05EBD00F42054 /* YBIBVideoCell+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YBIBVideoCell+Internal.h"; sourceTree = "<group>"; };
 		23FF103422F6B6FC0091331F /* TestFController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestFController.h; sourceTree = "<group>"; };
 		23FF103522F6B6FC0091331F /* TestFController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestFController.m; sourceTree = "<group>"; };
+		63663A5127519A060036DF5F /* BaseListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseListController.m; sourceTree = "<group>"; };
+		63663A5227519A070036DF5F /* BaseListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseListCell.xib; sourceTree = "<group>"; };
+		63663A5327519A070036DF5F /* BaseListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseListCell.m; sourceTree = "<group>"; };
+		63663A5427519A070036DF5F /* BaseListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseListCell.h; sourceTree = "<group>"; };
+		63663A5527519A070036DF5F /* BaseListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseListController.h; sourceTree = "<group>"; };
 		97542AA3FE46C41411B15C5D /* Pods_YBImageBrowserDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YBImageBrowserDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7455F1D491BFCA198544CA1 /* Pods-YBImageBrowserDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBImageBrowserDemo.debug.xcconfig"; path = "Target Support Files/Pods-YBImageBrowserDemo/Pods-YBImageBrowserDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F2A1E10DD2C568E5493980E0 /* Pods-YBImageBrowserDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBImageBrowserDemo.release.xcconfig"; path = "Target Support Files/Pods-YBImageBrowserDemo/Pods-YBImageBrowserDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -286,6 +286,11 @@
 				23ABA27422D0BAB600535F6A /* YBIBAnimatedTransition.h */,
 				23ABA27522D0BAB600535F6A /* YBIBAnimatedTransition.m */,
 				23ABA27622D0BAB600535F6A /* YBIBCollectionView.h */,
+				63663A5427519A070036DF5F /* BaseListCell.h */,
+				63663A5327519A070036DF5F /* BaseListCell.m */,
+				63663A5227519A070036DF5F /* BaseListCell.xib */,
+				63663A5527519A070036DF5F /* BaseListController.h */,
+				63663A5127519A060036DF5F /* BaseListController.m */,
 				23ABA27722D0BAB600535F6A /* YBIBCollectionView.m */,
 				23ABA27822D0BAB600535F6A /* YBIBCollectionViewLayout.h */,
 				23ABA27922D0BAB600535F6A /* YBIBCollectionViewLayout.m */,
@@ -436,7 +441,6 @@
 			isa = PBXGroup;
 			children = (
 				23CC34FF22DC6BD20037018B /* File */,
-				23CC34DA22DC2D400037018B /* Base */,
 				23CC34E422DC2F310037018B /* 展示图片+视频 */,
 				23CC34E622DC4B070037018B /* 自定义工具视图（例查看原图） */,
 				23CC34E722DC4B570037018B /* 自定义 Cell */,
@@ -456,18 +460,6 @@
 				23CC350D22DC855A0037018B /* TestImageBrowser.m */,
 			);
 			path = "添加到控制器使用（以相册为例）";
-			sourceTree = "<group>";
-		};
-		23CC34DA22DC2D400037018B /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				23CC34DE22DC2D6D0037018B /* BaseListCell.h */,
-				23CC34DF22DC2D6D0037018B /* BaseListCell.m */,
-				23CC34E022DC2D6D0037018B /* BaseListCell.xib */,
-				2325B19623AA345F00FF76E3 /* BaseListController.h */,
-				2325B19723AA345F00FF76E3 /* BaseListController.m */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		23CC34E422DC2F310037018B /* 展示图片+视频 */ = {
@@ -679,9 +671,9 @@
 				23028E1222DD90EC00C745ED /* localVideo0.mp4 in Resources */,
 				23CC350322DC71220037018B /* localImage0.jpg in Resources */,
 				23B3270722A768F4008BFF5D /* Main.storyboard in Resources */,
-				23CC34E222DC2D6D0037018B /* BaseListCell.xib in Resources */,
 				23ABA2BC22D0BAB700535F6A /* YBImageBrowser.bundle in Resources */,
 				23CC350822DC7CAF0037018B /* TestCustomCell.xib in Resources */,
+				63663A5727519A070036DF5F /* BaseListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,11 +750,11 @@
 				23ABA2BD22D0BAB700535F6A /* YBImageBrowser.m in Sources */,
 				23CC34ED22DC59190037018B /* TestBController.m in Sources */,
 				23CC34EA22DC58F10037018B /* TestAController.m in Sources */,
+				63663A5627519A070036DF5F /* BaseListController.m in Sources */,
 				23ABA2A822D0BAB700535F6A /* YBIBLoadingView.m in Sources */,
 				2303ADBE22D625D30001A176 /* YBIBIconManager.m in Sources */,
 				23ABA2AD22D0BAB700535F6A /* YBIBDataMediator.m in Sources */,
 				23ABA2C522D0CAD100535F6A /* YBIBSheetView.m in Sources */,
-				2325B19823AA345F00FF76E3 /* BaseListController.m in Sources */,
 				23ABA2B722D0BAB700535F6A /* YBIBImageData.m in Sources */,
 				23F26AD222D7208700C27C21 /* YBIBVideoActionBar.m in Sources */,
 				23F26ACC22D71FB200C27C21 /* YBIBVideoView.m in Sources */,
@@ -775,7 +767,6 @@
 				23ABA2AF22D0BAB700535F6A /* YBIBCopywriter.m in Sources */,
 				23C282F222D5F4540084E9E6 /* YBIBVideoCell.m in Sources */,
 				23ABA2A922D0BAB700535F6A /* YBIBToastView.m in Sources */,
-				23CC34E122DC2D6D0037018B /* BaseListCell.m in Sources */,
 				23ABA2AC22D0BAB700535F6A /* YBIBCollectionViewLayout.m in Sources */,
 				23CC34FE22DC6BC50037018B /* BaseFileManager.m in Sources */,
 				23ABA2C822D0CAE200535F6A /* YBIBTopView.m in Sources */,
@@ -790,6 +781,7 @@
 				23CC350B22DC7CC00037018B /* TestCustomData.m in Sources */,
 				23ABA2B922D0BAB700535F6A /* YBIBImageScrollView.m in Sources */,
 				23ABA2AE22D0BAB700535F6A /* YBIBScreenRotationHandler.m in Sources */,
+				63663A5827519A070036DF5F /* BaseListCell.m in Sources */,
 				23F5A00D23161D51003F0FAE /* YBIBDefaultWebImageMediator.m in Sources */,
 				23ABA2BB22D0BAB700535F6A /* YBImage.m in Sources */,
 				23CC34F322DC59340037018B /* TestDController.m in Sources */,
