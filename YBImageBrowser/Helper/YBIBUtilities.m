@@ -91,6 +91,9 @@ CGFloat YBIBSafeAreaBottomHeight(void) {
 }
 
 BOOL isVideo(NSString *ulrOrName) {
+    if (ulrOrName == nil)
+        return NO;
+    
     if ([ulrOrName localizedCaseInsensitiveContainsString:@".mov"] ||
         [ulrOrName localizedCaseInsensitiveContainsString:@".m4v"] ||
         [ulrOrName localizedCaseInsensitiveContainsString:@".mp4"]) {

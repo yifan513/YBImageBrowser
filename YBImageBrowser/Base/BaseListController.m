@@ -103,35 +103,37 @@
 - (void)setDataArray:(NSArray *)dataArray {
     _dataArray = dataArray;
     _datas = [NSMutableArray array];
+    
     [self.dataArray enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-
-        if (isVideo(obj)) {
-            YBIBVideoData *data = [YBIBVideoData new];
-            if ([obj containsString:@"http"]) {
-                data.videoURL = [NSURL URLWithString:obj];
-            } else {
-                if ([obj hasPrefix:@"/"]) {
-                    data.videoURL = [NSURL fileURLWithPath:obj];
+        if ([obj isKindOfClass:NSString.class]) {
+            if (isVideo(obj)) {
+                YBIBVideoData *data = [YBIBVideoData new];
+                if ([obj containsString:@"http"]) {
+                    data.videoURL = [NSURL URLWithString:obj];
                 } else {
-                    NSString *path = [[NSBundle mainBundle] pathForResource:obj.stringByDeletingPathExtension ofType:obj.pathExtension];
-                    data.videoURL = [NSURL fileURLWithPath:path];
+                    if ([obj hasPrefix:@"/"]) {
+                        data.videoURL = [NSURL fileURLWithPath:obj];
+                    } else {
+                        NSString *path = [[NSBundle mainBundle] pathForResource:obj.stringByDeletingPathExtension ofType:obj.pathExtension];
+                        data.videoURL = [NSURL fileURLWithPath:path];
+                    }
                 }
+                data.projectiveView = [self viewAtIndex:idx];
+                [_datas addObject:data];
             }
-            data.projectiveView = [self viewAtIndex:idx];
-            [_datas addObject:data];
-        }
-        else {
-            YBIBImageData *data = [YBIBImageData new];
-            if ([obj containsString:@"http"]) {
-                data.imageURL = [NSURL URLWithString:obj];
+            else {
+                YBIBImageData *data = [YBIBImageData new];
+                if ([obj containsString:@"http"]) {
+                    data.imageURL = [NSURL URLWithString:obj];
+                }
+                else if ([obj hasPrefix:@"/"]) {
+                    data.imagePath = obj;
+                } else {
+                    data.imageName = obj;
+                }
+                data.projectiveView = [self viewAtIndex:idx];
+                [_datas addObject:data];
             }
-            else if ([obj hasPrefix:@"/"]) {
-                data.imagePath = obj;
-            } else {
-                data.imageName = obj;
-            }
-            data.projectiveView = [self viewAtIndex:idx];
-            [_datas addObject:data];
         }
     }];
     
