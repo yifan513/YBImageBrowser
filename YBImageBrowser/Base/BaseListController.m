@@ -94,7 +94,7 @@
 - (void)clickClearButton:(UIButton *)sender {
     [[SDImageCache sharedImageCache] clearMemory];
     [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
-        [self.view ybib_showHookToast:@"清理完成"];
+        [self.view ybib_showHookToast:@"Cache cleared"];
     }];
 }
 
@@ -163,7 +163,7 @@
     if (!_clearButton) {
         _clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _clearButton.frame = CGRectMake(15, CGRectGetMaxY(self.collectionView.frame) + 7.5, 80, 25);
-        [_clearButton setTitle:@"清理缓存" forState:UIControlStateNormal];
+        [_clearButton setTitle:@"Clear cache" forState:UIControlStateNormal];
         _clearButton.titleLabel.font = [UIFont systemFontOfSize:15];
         _clearButton.backgroundColor = [UIColor orangeColor];
         _clearButton.layer.cornerRadius = 4;
